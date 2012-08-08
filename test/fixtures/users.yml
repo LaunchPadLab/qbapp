@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  email: MyString
+  access_token: MyString
+  realmID: MyString
+
+two:
+  email: MyString
+  access_token: MyString
+  realmID: MyString

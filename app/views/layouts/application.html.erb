@@ -4,10 +4,11 @@
   <title><%= @title %></title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
-  <script type="text/javascript" src="https://js.appcenter.intuit.com/Content/IA/intuit.ipp.anywhere.js"></script> 
+  <script type="text/javascript" src="https://js.appcenter.intuit.com/Content/IA/intuit.ipp.anywhere.js"></script>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <%= render 'layouts/header'%>
 
 <%= yield %>
 
