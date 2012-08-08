@@ -7,7 +7,6 @@ gem 'rails', '3.2.3'
 gem 'thin'
 gem 'pg'
 gem 'heroku'
-
 gem 'quickeebooks'
 
 # Gems used only for assets and not required
