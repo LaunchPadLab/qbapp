@@ -4,8 +4,10 @@ Qbapp::Application.routes.draw do
   
   get '/dashboard' => 'pages#dashboard', as: :dashboard
   
-  get '/SendOpenIDRequest' => 'sessions#request_id'
+  get '/oauth_request' => 'sessions#oauth_request'
   
   get '/oauth/callback' => 'sessions#callback'
+  
+  get '/signout' => 'sessions#destroy', as: :signout
 
 end

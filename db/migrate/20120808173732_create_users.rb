@@ -3,6 +3,7 @@ class CreateUsers < ActiveRecord::Migration
     create_table :users do |t|
       t.string :email
       t.string :access_token
+      t.string :access_secret
       t.string :realmID
 
       t.timestamps
