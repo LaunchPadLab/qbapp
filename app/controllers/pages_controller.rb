@@ -2,6 +2,27 @@ class PagesController < ApplicationController
   
   def home
     @title = "QB | Home"
+    
+    if session[:user_id]
+      @title = "QB | Dashboard"
+      user = User.find(session[:user_id])
+
+      qb_oauth_consumer = OAuth::Consumer.new(QB_KEY, QB_SECRET, {
+          :site                 => "https://oauth.intuit.com",
+          :request_token_path   => "/oauth/v1/get_request_token",
+          :authorize_url        => "https://appcenter.intuit.com/Connect/Begin",
+          :access_token_path    => "/oauth/v1/get_access_token"
+      })
+      oauth_client = OAuth::AccessToken.new(qb_oauth_consumer, user.access_token, user.access_secret)
+      company_service = Quickeebooks::Online::Service::CompanyMetaData.new
+      company_service.access_token = oauth_client
+      company_service.realm_id = user.realmID
+      @collection_company = company_service.load
+      
+      
+      
+    end
+    
   end
   
   def dashboard

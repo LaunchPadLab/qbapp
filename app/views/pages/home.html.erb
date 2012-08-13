@@ -1,0 +1,4 @@
+<% if session[:user_id] %>
+  <p>My companies</p>
+  <p><%= link_to @collection_company.registered_company_name, dashboard_url %></p>
+<% end %>
